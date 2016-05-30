@@ -1,0 +1,8 @@
+language: none
+
+build:
+  post_ci:
+    - sudo pip install -U docker-compose
+    - docker-compose up -d
+    - docker-compose exec app bundle exec rails db:setup
+    - docker-compose exec app bundle exec rails test
