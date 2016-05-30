@@ -2,6 +2,7 @@ language: none
 
 build:
   post_ci:
+    - pip install --upgrade pip
     - sudo pip install -U docker-compose
     - docker-compose up -d
     - docker-compose exec app bundle exec rails db:setup
