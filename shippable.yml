@@ -1,6 +1,10 @@
 language: none
 
 build:
+
+  pre_ci:
+    - docker-compose up -d
+    
   post_ci:
     - pip install --upgrade pip
     - sudo pip install -U docker-compose
